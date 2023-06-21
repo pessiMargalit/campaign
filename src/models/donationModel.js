@@ -12,13 +12,13 @@ const DonationModel = mongoose.model("donations", donationSchema);
 
 exports.DonationModel = DonationModel;
 
-exports.validDonation = (_bodyData) => {
+exports.validDonation = (bodyData) => {
 
     let joiSchema = Joi.object({
         sum: Joi.number().min(2).required,
         fundraiserId:Joi.string().required,
         donorName: Joi.string().default("Anonymous")
     })
-    return joiSchema.validate(_bodyData);
+    return joiSchema.validate(bodyData);
 }
 
