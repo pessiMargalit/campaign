@@ -1,12 +1,9 @@
-export class Service {
 
-    constructor(repo,valid_model) {
-      this.repo = repo;
-      this.valid_model = valid_model;
-    //   this.getAll = this.getAll.bind(this);
-    //   this.insert = this.insert.bind(this);
-    //   this.update = this.update.bind(this);
-    //   this.delete = this.delete.bind(this);
+module.exports = class Service {
+
+    constructor(repo, valid_model) {
+        this.repo = repo;
+        this.valid_model = valid_model;
     }
 
     async getAll() {
@@ -14,25 +11,29 @@ export class Service {
     }
 
     async getById(id) {
-        return await this.repo.getById(id);
+        return this.repo.getById(id)
     }
 
     async insert(data) {
-        let valid_body =  this.repo.valid_model(data) ; 
-        if(valid_body.error)
-            return valid_body.error.details;
-        return await this.repo.insert(data);
+        const validBody = this.valid_model(data);
+        if (validBody.error) {
+            return validBody;
+        } else {
+            return await this.repo.insert(data);
+        }
     }
 
-    async update(data) {
-        let valid_body =  this.repo.valid_model(data) ; 
-        if(valid_body.error)
-            return valid_body.error.details;
-        return await this.repo.update(data);
+    async update(id, data) {
+        let validBody = this.valid_model(data);
+        if (validBody.error) {
+            return validBody;
+        } else {
+            return await this.repo.update(id,data);
+        }
     }
 
     async delete(id) {
         return await this.repo.delete(id);
     }
-   
-  }
+
+}

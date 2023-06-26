@@ -1,13 +1,10 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
+const { connect } = require("../models/mongoConnect");
 
-export class Repository {
+module.exports = class Repository {
     constructor(model) {
+        connect();
         this.model = model;
-        // this.getAll = this.getAll.bind(this);
-        // this.getById = this.getAll.bind(this);
-        // this.insert = this.insert.bind(this);
-        // this.update = this.update.bind(this);
-        // this.delete = this.delete.bind(this);
     }
 
     async getAll() {
@@ -16,22 +13,33 @@ export class Repository {
     }
 
     async getById(id) {
-        let item = await this.model.findById(id)
+        let item = await this.model.findById(id);
         return item;
     }
 
     async insert(data) {
         let result = await this.model.create(data);
         return result;
-
     }
-    async update(data) {
-        let result = await this.model.replaceOne(data);
+
+    async update(id, data) {
+        let result = await this.model.findByIdAndUpdate(id, data, { new: true });
         return result;
     }
+
     async delete(id) {
         let result = await this.model.findByIdAndDelete(id);
         return result;
+    }
 
+    async updateCollectedField(sum, id) {
+        let current = await this.model.findById(id);
+        if (current != undefined) {
+            current.collected += sum;
+            return await this.model.findByIdAndUpdate(id, current, { new: true });
+        } else {
+            return new Error("server error");
+        }
     }
 }
+

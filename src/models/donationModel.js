@@ -6,19 +6,24 @@ const donationSchema = new mongoose.Schema({
     sum: Number,
     fundraiserId: String,
     donorName: String
-});
+}, {collection: "donations"});
 
-const DonationModel = mongoose.model("donations", donationSchema);
 
-exports.DonationModel = DonationModel;
+const validDonationFunc = (_bodyData)=>{
+    let joiSchema=Joi.object({
+        sum:Joi.number().min(10).required(),
+        fundraiserId:Joi.string().required(),
+        donorName:Joi.string().default("anonymous")
+        })
+        console.log("trying to validate...");
+    return joiSchema.validate(_bodyData);
+    }
 
-exports.validDonation = (bodyData) => {
+const donationModel = mongoose.model("donations", donationSchema);
 
-    let joiSchema = Joi.object({
-        sum: Joi.number().min(2).required,
-        fundraiserId:Joi.string().required,
-        donorName: Joi.string().default("Anonymous")
-    })
-    return joiSchema.validate(bodyData);
+module.exports = {
+    validDonation: validDonationFunc,
+    DonationModel : donationModel
 }
+
 

@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "e61a16fe-54e3-4d9a-a630-618c508377b7",
+		"name": "Campaign project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get group by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/groups/64982e244540b0af77beea3f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"groups",
+						"64982e244540b0af77beea3f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all groups with fundraisers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get the current campaign",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/campaigns/64982b36d0df3529b763d2dd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"campaigns",
+						"64982b36d0df3529b763d2dd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all donations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/donations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"donations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all fundraisers with their donations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/fundraisers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fundraisers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post with invalid types (handle error)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n    \"sum\": \"jjjjjjjj\",\r\n    \"fundraiserId\": \"64982e434540b0af77beea41\",\r\n    \"donorName\": \"Josh\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/donations/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"donations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put campaigns details with manager role (valid)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"roleId\" : \"111\",\r\n\"data\":{\r\n    \"target\": 3000000,\r\n    \"collected\": 3500,\r\n    \"description\": \"Ezer Mitzion\",\r\n    \"managerId\": \"111\",\r\n    \"date\": \"2020-10-11T21:00:00.000Z\"\r\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/campaigns/64982b36d0df3529b763d2dd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"campaigns",
+						"64982b36d0df3529b763d2dd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "try to update campaigns details with invalid role",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"roleId\" : \"12345\",\r\n\"data\":{\r\n    \"target\": 3000000,\r\n    \"collected\": 3500,\r\n    \"description\": \"Ezer Mitzion\",\r\n    \"managerId\": \"111\",\r\n    \"date\": \"2020-10-11T21:00:00.000Z\"\r\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/campaigns/64982b36d0df3529b763d2dd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"campaigns",
+						"64982b36d0df3529b763d2dd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

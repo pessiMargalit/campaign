@@ -1,7 +1,13 @@
-import { Repository } from "./repository";
+const Repository = require("./repository");
 
-export class DonationRepo extends Repository {
+module.exports = class DonationRepo extends Repository{
     constructor(model) {
-      super(model);
-    }
-  };
+        super(model);
+      }
+
+      async getById(id){
+        let items = await this.model.find({"fundraiserId" : id});
+        return items;
+      }
+
+}
