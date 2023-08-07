@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e61a16fe-54e3-4d9a-a630-618c508377b7",
+		"_postman_id": "f83be90e-6fd1-4b28-abea-94f4aea552b6",
 		"name": "Campaign project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -24,7 +24,63 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "get group by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/groups/64982e244540b0af77beea3f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"groups",
+								"64982e244540b0af77beea3f"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-RW30y0X5awLxpsXW7wKIvP0Nh0U\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Jun 2023 11:02:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64982e244540b0af77beea3f\",\n    \"target\": 200000,\n    \"collected\": 1700,\n    \"campaignId\": \"64982b36d0df3529b763d2dd\",\n    \"name\": \"Boys\",\n    \"managerId\": \"bbb\",\n    \"__v\": 0,\n    \"fundraisers\": [\n        {\n            \"_id\": \"64982e434540b0af77beea41\",\n            \"target\": 100000,\n            \"collected\": 1700,\n            \"groupId\": \"64982e244540b0af77beea3f\",\n            \"name\": \"Yossi\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "get all groups with fundraisers",
@@ -44,7 +100,62 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "get all groups with fundraisers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"groups"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "712"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c8-B7KD9+LzwApjzYI3GV/MyUDll28\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Jun 2023 11:02:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"64982d994540b0af77beea39\",\n        \"target\": 500000,\n        \"collected\": 2000,\n        \"campaignId\": \"64982b36d0df3529b763d2dd\",\n        \"name\": \"Girls\",\n        \"managerId\": \"ggg\",\n        \"__v\": 0,\n        \"fundraisers\": [\n            {\n                \"_id\": \"64982df84540b0af77beea3b\",\n                \"target\": 50000,\n                \"collected\": 1000,\n                \"groupId\": \"64982d994540b0af77beea39\",\n                \"name\": \"Chava\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"64982e0a4540b0af77beea3d\",\n                \"target\": 70000,\n                \"collected\": 1000,\n                \"groupId\": \"64982d994540b0af77beea39\",\n                \"name\": \"Pessi\",\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"64982e244540b0af77beea3f\",\n        \"target\": 200000,\n        \"collected\": 1700,\n        \"campaignId\": \"64982b36d0df3529b763d2dd\",\n        \"name\": \"Boys\",\n        \"managerId\": \"bbb\",\n        \"__v\": 0,\n        \"fundraisers\": [\n            {\n                \"_id\": \"64982e434540b0af77beea41\",\n                \"target\": 100000,\n                \"collected\": 1700,\n                \"groupId\": \"64982e244540b0af77beea3f\",\n                \"name\": \"Yossi\",\n                \"__v\": 0\n            }\n        ]\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "get the current campaign",
@@ -65,7 +176,63 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "get the current campaign",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/campaigns/64982b36d0df3529b763d2dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"campaigns",
+								"64982b36d0df3529b763d2dd"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-/D/Mxk8fI0orXF/UZy637lmM/qw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Jun 2023 11:03:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64982b36d0df3529b763d2dd\",\n    \"target\": 3000000,\n    \"collected\": 3700,\n    \"description\": \"Ezer Mitzion\",\n    \"managerId\": \"111\",\n    \"date\": \"2020-10-11T21:00:00.000Z\",\n    \"__v\": 0\n}"
+				}
+			]
 		},
 		{
 			"name": "get all donations",
@@ -85,7 +252,62 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "get all donations",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/donations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"donations"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "448"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c0-fjQ6wwvNJrHxUDrUL48FhnHrFcw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Jun 2023 11:03:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"64982f7a01c28f65f2f595cb\",\n        \"sum\": 1000,\n        \"fundraiserId\": \"64982df84540b0af77beea3b\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"649830b2d4111b42be4ed768\",\n        \"sum\": 1000,\n        \"fundraiserId\": \"64982e0a4540b0af77beea3d\",\n        \"donorName\": \"Josh\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64994eaf3a5d924661d9e2cd\",\n        \"sum\": 1500,\n        \"fundraiserId\": \"64982e434540b0af77beea41\",\n        \"donorName\": \"Yakov\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6499512e43f93f24e1e3d13c\",\n        \"sum\": 200,\n        \"fundraiserId\": \"64982e434540b0af77beea41\",\n        \"donorName\": \"שמשון\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "get all fundraisers with their donations",
@@ -105,7 +327,62 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "get all fundraisers with their donations",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/fundraisers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fundraisers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "872"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"368-j3p8AIKzv623GrbEx0Z/q9cJThs\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Jun 2023 11:03:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"64982df84540b0af77beea3b\",\n        \"target\": 50000,\n        \"collected\": 1000,\n        \"groupId\": \"64982d994540b0af77beea39\",\n        \"name\": \"Chava\",\n        \"__v\": 0,\n        \"donations\": [\n            {\n                \"_id\": \"64982f7a01c28f65f2f595cb\",\n                \"sum\": 1000,\n                \"fundraiserId\": \"64982df84540b0af77beea3b\",\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"64982e0a4540b0af77beea3d\",\n        \"target\": 70000,\n        \"collected\": 1000,\n        \"groupId\": \"64982d994540b0af77beea39\",\n        \"name\": \"Pessi\",\n        \"__v\": 0,\n        \"donations\": [\n            {\n                \"_id\": \"649830b2d4111b42be4ed768\",\n                \"sum\": 1000,\n                \"fundraiserId\": \"64982e0a4540b0af77beea3d\",\n                \"donorName\": \"Josh\",\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"64982e434540b0af77beea41\",\n        \"target\": 100000,\n        \"collected\": 1700,\n        \"groupId\": \"64982e244540b0af77beea3f\",\n        \"name\": \"Yossi\",\n        \"__v\": 0,\n        \"donations\": [\n            {\n                \"_id\": \"64994eaf3a5d924661d9e2cd\",\n                \"sum\": 1500,\n                \"fundraiserId\": \"64982e434540b0af77beea41\",\n                \"donorName\": \"Yakov\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6499512e43f93f24e1e3d13c\",\n                \"sum\": 200,\n                \"fundraiserId\": \"64982e434540b0af77beea41\",\n                \"donorName\": \"שמשון\",\n                \"__v\": 0\n            }\n        ]\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "post with invalid types (handle error)",
@@ -135,7 +412,72 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "post with invalid types (handle error)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n    \"sum\": \"jjjjjjjj\",\r\n    \"fundraiserId\": \"64982e434540b0af77beea41\",\r\n    \"donorName\": \"Josh\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/donations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"donations",
+								""
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5f-kT2i2oKEGohn7W+vwmETAjp9CUY\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Jun 2023 11:03:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "ValidationError: \"sum\" must be a number\n your request can not be completed, please try later..."
+				}
+			]
 		},
 		{
 			"name": "put campaigns details with manager role (valid)",
@@ -165,7 +507,72 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "put campaigns details with manager role (valid)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"roleId\" : \"111\",\r\n\"data\":{\r\n    \"target\": 3000000,\r\n    \"collected\": 3500,\r\n    \"description\": \"Ezer Mitzion\",\r\n    \"managerId\": \"111\",\r\n    \"date\": \"2020-10-11T21:00:00.000Z\"\r\n}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/campaigns/64982b36d0df3529b763d2dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"campaigns",
+								"64982b36d0df3529b763d2dd"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-xYUANWSnPDf8ZKUzYIVqobk9qlA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Jun 2023 11:03:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64982b36d0df3529b763d2dd\",\n    \"target\": 3000000,\n    \"collected\": 3500,\n    \"description\": \"Ezer Mitzion\",\n    \"managerId\": \"111\",\n    \"date\": \"2020-10-11T21:00:00.000Z\",\n    \"__v\": 0\n}"
+				}
+			]
 		},
 		{
 			"name": "try to update campaigns details with invalid role",
@@ -195,7 +602,72 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "try to update campaigns details with invalid role",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"roleId\" : \"12345\",\r\n\"data\":{\r\n    \"target\": 3000000,\r\n    \"collected\": 3500,\r\n    \"description\": \"Ezer Mitzion\",\r\n    \"managerId\": \"111\",\r\n    \"date\": \"2020-10-11T21:00:00.000Z\"\r\n}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/campaigns/64982b36d0df3529b763d2dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"campaigns",
+								"64982b36d0df3529b763d2dd"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-mUuzsPUcp9x4/E1VB2UQW/0Qc7E\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Jun 2023 11:03:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Error: you dont have role to do that\n your request can not be completed, please try later..."
+				}
+			]
 		}
 	]
 }
