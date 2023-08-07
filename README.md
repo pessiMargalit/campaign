@@ -1,6 +1,6 @@
 # Node.js Campaign API
 
-This project is an API built using Node.js, designed to be used by a matching site for campaigns. The API provides functionality for matching campaigns, managing groups, donors, and donations.
+This project is an API built using Node.js and MongoDB, designed to be used by a matching site for campaigns. The API provides functionality for matching campaigns, managing groups, fundraisers, and donations.
 
 ## Table of Contents
 
@@ -14,9 +14,9 @@ This project is an API built using Node.js, designed to be used by a matching si
 
 ## Installation
 
-1. Clone the repository: git clone https://github.com/your/repository.git
+1. Clone the repository: git clone https://github.com/pessiMargalit/nodejs-campaign.git
 2. Install the dependencies: npm install
-3. Configure the environment variables by creating a .env file based on the provided .env.example file.
+3. Configure the environment variables by creating a .env file based on the provided .env .
 4. Set up the database by running the necessary migrations and seeds. You can use the provided scripts for this purpose.
 
 ## Usage
@@ -35,21 +35,21 @@ The API provides the following endpoints:
 1. **Campaigns**
    - GET /campaigns: Get a list of campaigns.
    - POST /campaigns: Create a new campaign.
-   - GET /campaigns/:id: Get details of a specific campaign.
+   - GET /campaigns/:id: Get details of  the current campaign.
    - PUT /campaigns/:id: Update a specific campaign.
    - DELETE /campaigns/:id: Delete a specific campaign.
 2. **Groups**
-   - GET /groups: Get a list of groups.
+   - GET /groups: Get a list of all groups with their fundraisers.
    - POST /groups: Create a new group.
    - GET /groups/:id: Get details of a specific group.
    - PUT /groups/:id: Update a specific group.
    - DELETE /groups/:id: Delete a specific group.
-3. **Donors**
-   - GET /donors: Get a list of donors.
-   - POST /donors: Create a new donor.
-   - GET /donors/:id: Get details of a specific donor.
-   - PUT /donors/:id: Update a specific donor.
-   - DELETE /donors/:id: Delete a specific donor.
+3. **Fundraisers**
+   - GET /donors: Get a list of all fundraisers with their donations.
+   - POST /donors: Create a new fundraiser.
+   - GET /donors/:id: Get details of a specific fundraiser.
+   - PUT /donors/:id: Update a specific fundraiser.
+   - DELETE /donors/:id: Delete a specific fundraiser.
 4. **Donations**
    - GET /donations: Get a list of donations.
    - POST /donations: Create a new donation.
@@ -59,11 +59,9 @@ The API provides the following endpoints:
 
 For detailed information on each endpoint, including request and response examples, please refer to the API documentation.
 
-## Authentication
+## Database
 
-The API uses token-based authentication. To access the protected endpoints, you need to include a valid JWT token in the Authorization header of your requests.
-
-To obtain a token, send a POST request to the /auth/login endpoint with valid credentials. The response will include a JWT token that you can use for subsequent requests.
+The API uses MongoDB as the database for storing campaign, group, fundraisers, and donation data. Make sure you have MongoDB installed and running locally or provide a remote MongoDB connection URI in the .env file.
 
 ## Error Handling
 
