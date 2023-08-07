@@ -59,9 +59,6 @@ The API provides the following endpoints:
 
 For detailed information on each endpoint, including request and response examples, please refer to the API documentation.
 
-## Database
-
-The API uses MongoDB as the database for storing campaign, group, fundraisers, and donation data. Make sure you have MongoDB installed and running locally or provide a remote MongoDB connection URI in the .env file.
 
 ## Error Handling
 
